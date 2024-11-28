@@ -7,8 +7,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>assignment Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
   <dependencies>
-  
     <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
@@ -79,32 +79,46 @@
         <version>5.9.3</version>
         <scope>test</scope>
     </dependency>
-
   </dependencies>
-
-<repository>
-  <id>Artifacts</id>
-  <url>https://pkgs.dev.azure.com/rafaaaa45/azureAssignment/_packaging/Artifacts/maven/v1</url>
-  <releases>
-    <enabled>true</enabled>
-  </releases>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
-</repository>
   
+  <repositories>
+    <repository>
+      <id>Artifacts</id>
+      <url>https://pkgs.dev.azure.com/rafaaaa45/azureAssignment/_packaging/Artifacts/maven/v1</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>Artifacts</id>
+      <url>https://pkgs.dev.azure.com/rafaaaa45/azureAssignment/_packaging/Artifacts/maven/v1</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </distributionManagement>
+
   <build>
-  <plugins>
-    <plugin>
+    <plugins>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <executions>
-            <execution>
-                <phase>integration-test</phase>
-            </execution>
+          <execution>
+            <phase>integration-test</phase>
+          </execution>
         </executions>
-    </plugin>
-</plugins>
+      </plugin>
+    </plugins>
     <finalName>assignment</finalName>
   </build>
 </project>
