@@ -107,14 +107,6 @@
         </repository>
     </distributionManagement>
 
-    <properties>
-        <sonar.projectKey>SonarQube_</sonar.projectKey>
-        <sonar.projectName>SonarQube</sonar.projectName>
-        <sonar.host.url>http://localhost:9000</sonar.host.url>
-        <sonar.login>admin</sonar.login>
-        <sonar.password>khpAG%E8brD%</sonar.password>
-    </properties>
-
 
     <build>
         <plugins>
@@ -126,11 +118,6 @@
                         <phase>integration-test</phase>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>4.0.0.4121</version>
             </plugin>
         </plugins>
         <finalName>assignment</finalName>
