@@ -86,32 +86,6 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>Artifacts</id>
-            <url>https://pkgs.dev.azure.com/rafaaaa45/azureAssignment/_packaging/Artifacts/maven/v1</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>Artifacts</id>
-            <url>https://pkgs.dev.azure.com/rafaaaa45/azureAssignment/_packaging/Artifacts/maven/v1</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </distributionManagement>
-
     <build>
         <plugins>
             <plugin>
