@@ -8,6 +8,11 @@
     <name>assignment Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>  <!-- Versão do código-fonte -->
+        <maven.compiler.target>17</maven.compiler.target>  <!-- Versão de destino -->
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.mockito</groupId>
@@ -107,19 +112,29 @@
         </repository>
     </distributionManagement>
 
-
     <build>
         <plugins>
-                 <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>3.0.0-M5</version>
-      <configuration>
-        <includes>
-          <include>**/*Test.java</include> <!-- Ensure your test classes are included -->
-        </includes>
-      </configuration>
-    </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Versão do plugin -->
+                <configuration>
+                    <source>17</source>  <!-- Versão do código-fonte -->
+                    <target>17</target>  <!-- Versão de destino -->
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include> <!-- Certifique-se de que suas classes de teste estão incluídas -->
+                    </includes>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -129,30 +144,31 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
-    		<groupId>org.jacoco</groupId>
-    		<artifactId>jacoco-maven-plugin</artifactId>
-    		<version>0.8.8</version>
-    		<executions>
-    			<execution>
-    				<goals>
-    					<goal>prepare-agent</goal>
-    				</goals>
-    			</execution>
-    			<execution>
-    				<id>report</id>
-    				<phase>test</phase>
-    				<goals>
-    					<goal>report</goal>
-    				</goals>
-    			</execution>
-    		</executions>
-                     <configuration>
-                             <outputFile>${project.build.directory}/site/jacoco/jacoco.xml</outputFile>
-                             <append>false</append>
-                             <dataFile>${project.build.directory}/jacoco.exec</dataFile>
-                     </configuration>
-    	</plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.8</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <outputFile>${project.build.directory}/site/jacoco/jacoco.xml</outputFile>
+                    <append>false</append>
+                    <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                </configuration>
+            </plugin>
         </plugins>
         <finalName>assignment</finalName>
     </build>
